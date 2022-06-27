@@ -1,12 +1,80 @@
-This directory contains Sglib - a simple generic library for C. The
-distribution contains:
+INTRODUCTION
+^^^^^^^^^^^^
 
-sglib.h - this is the generic library, the file can be directly used,
-          or you can move it to your include directory.
+Sglib is a library defining useful macros for manipulating common data
+structures. The  library currently  provides a  generic implementation
+for:
 
-doc - directory containing the documentation. The main page of the
-      documentation is stored in the doc/index.html.
+- sorting arrays
+- manipulation of linked lists
+- manipulation of sorted linked lists
+- manipulation of double linked lists
+- manipulation of red-black trees
+- handling hashed containers
 
-samples - directory storing simple executable files using sglib.h.
-          You can run all  the samples together with self-test routine
-          by running make in this directory.
+
+A basic set of functions (macros) is provided for each data structure.
+They  cover inserting,  deleting,  searching  and iterating  elements.
+Additional  specific  functions  are   available  for  for  each  data
+structure, such as concatenation, reversal  or sorting for lists, etc.
+
+Sglib   provides   algorithms,   not  data   structures.    Algorithms
+implemented in Sglib work with  existing user types, for example, list
+macros  are functional  for  any data  structure  containing a  (next)
+pointer  to  the  same  type.   Sglib is  independent  of  the  memory
+management  system.   It  does  not  execute  not  create/allocate  or
+destruct/release any data files.
+
+Sglib consists  of a single  header file  without any binary  code. In
+order to use it, just insert #include "sglib.h" into the source code.
+
+The library is  implemented in the C programming  language and written
+for  C programmers,  but is  (very) loosely  inspired by  C++ standard
+template library.
+
+Sglib functions are provided in two different interfaces:
+
+- The level0 interface is simply a collection of data-manipulating macros
+
+- The  level1  interface   consists  of  two  macros   for  each  data
+  structure. One  generates a  complete set of  functions manipulating
+  the data structure (like a C++ template does) and the other provides
+  prototypes of  these functions (usually  to be included in  a header
+  file).
+
+New users are  likely to use the Level 0  interface, which is simpler.
+If you need red-black trees, or  are bothered that sglib.h is included
+in every of your sources, you will use the level1 interface.
+
+
+
+
+
+GETTING STARTED
+^^^^^^^^^^^^^^^
+
+The easiest way  to get started with  sglib is to go  through a simple
+examples from the  "samples" directory. They will  help you understand
+the  general philosophy  of the  library.   Each file  shows one  data
+structure that sglib offers. Specifically:
+
+
+arraybinsearch:  level0 binary search in sorted arrays
+arraysort:       level0 array sorting
+arraysort1:      level1 array sorting
+listsort:        level0 list (merge) sort
+listinsertsort:  level0 sorted list example
+listinsertsort1: level1 sorted list example
+dllist:          level1 double linked lists example
+hash:            level1 hashing example
+rbtree:          level1 red-black tree
+
+To run a particular example, just type "make <example_name>".
+
+
+
+DOCUMENTATION
+^^^^^^^^^^^^^
+
+Sglib's reference manual is in the file "doc/index.html" file of this
+package.
