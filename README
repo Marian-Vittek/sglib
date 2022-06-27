@@ -1,5 +1,3 @@
-INTRODUCTION
-^^^^^^^^^^^^
 
 Sglib is  a C library  defining useful macros for  manipulating common
 data   structures.   The   library  currently   provides   a   generic
