@@ -1,9 +1,9 @@
 INTRODUCTION
 ^^^^^^^^^^^^
 
-Sglib is a library defining useful macros for manipulating common data
-structures. The  library currently  provides a  generic implementation
-for:
+Sglib is  a C library  defining useful macros for  manipulating common
+data   structures.   The   library  currently   provides   a   generic
+implementation for:
 
 - sorting arrays
 - manipulation of linked lists
@@ -15,15 +15,15 @@ for:
 
 A basic set of functions (macros) is provided for each data structure.
 They  cover inserting,  deleting,  searching  and iterating  elements.
-Additional  specific  functions  are   available  for  for  each  data
-structure, such as concatenation, reversal  or sorting for lists, etc.
+Additional specific  functions are available for  each data structure,
+such as concatenation, reversal or sorting for lists, etc.
 
 Sglib   provides   algorithms,   not  data   structures.    Algorithms
 implemented in Sglib work with  existing user types, for example, list
 macros  are functional  for  any data  structure  containing a  (next)
 pointer  to  the  same  type.   Sglib is  independent  of  the  memory
-management  system.   It  does  not  execute  not  create/allocate  or
-destruct/release any data files.
+management system.   It does not not  create/allocate or destruct/free
+any data.
 
 Sglib consists  of a single  header file  without any binary  code. In
 order to use it, just insert #include "sglib.h" into the source code.
@@ -32,9 +32,11 @@ The library is  implemented in the C programming  language and written
 for  C programmers,  but is  (very) loosely  inspired by  C++ standard
 template library.
 
+
 Sglib functions are provided in two different interfaces:
 
-- The level0 interface is simply a collection of data-manipulating macros
+- The  level0 interface  is simply  a collection  of data-manipulating
+  macros.
 
 - The  level1  interface   consists  of  two  macros   for  each  data
   structure. One  generates a  complete set of  functions manipulating
@@ -53,10 +55,10 @@ in every of your sources, you will use the level1 interface.
 GETTING STARTED
 ^^^^^^^^^^^^^^^
 
-The easiest way  to get started with  sglib is to go  through a simple
+The easiest  way to  get started  with sglib is  to go  through simple
 examples from the  "samples" directory. They will  help you understand
-the  general philosophy  of the  library.   Each file  shows one  data
-structure that sglib offers. Specifically:
+the general philosophy of the library.  Each file operates on one data
+structure. Specifically:
 
 
 arraybinsearch:  level0 binary search in sorted arrays
