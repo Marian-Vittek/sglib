@@ -1,6 +1,6 @@
 /* 
 
-  This is SGLIB version 1.0.10
+  This is SGLIB version 1.0.11
 
 
   Copyright (c) 2003-2022 Marian-Vittek, Bratislava, Xrefactory s.r.o.
@@ -881,7 +881,7 @@
   return(SGLIB_QUEUE_IS_EMPTY(elem_type, q->afield, q->ifield, q->jfield));\
  }\
  int sglib_##queue_type##_is_full(queue_type *q) {\
-  return(SGLIB_QUEUE_IS_FULL(elem_type, q->afield, q->ifield, q->jfield));\
+     return(SGLIB_QUEUE_IS_FULL(elem_type, q->afield, q->ifield, q->jfield, dim)); \
  }\
  elem_type sglib_##queue_type##_first_element(queue_type *q) {\
   return(SGLIB_QUEUE_FIRST_ELEMENT(elem_type, q->afield, q->ifield, q->jfield));\
@@ -1474,7 +1474,9 @@ SGLIB___RBTREE_SET_PARENT(x, v) for setting parent of x to v. For
 example: #define SGLIB___RBTREE_SET_PARENT(x, v) {(x)->parent = (v);}
 */
 
+#ifndef SGLIB___RBTREE_SET_PARENT
 #define SGLIB___RBTREE_SET_PARENT(x, v) {}
+#endif
 #define SGLIB___RBTREE_CHECK_PARENT(s, p) (1)
 #define SGLIB___SET_SUBT(x, leftt, v) {(x)->leftt = (v); if ((v)!=NULL) {SGLIB___RBTREE_SET_PARENT(v, x);}}
 
